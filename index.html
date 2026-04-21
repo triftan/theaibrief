@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AI Instructor Brief — Weekly Newsletter</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: #f5f4f0;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #0f0f0f;
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #f0c040;
+      border: 1px solid #f0c040;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: normal;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    header h1 em { font-style: italic; color: #f0c040; }
+    header p { font-size: 17px; color: #aaa; max-width: 480px; margin: 0 auto; line-height: 1.7; }
+
+    main { flex: 1; max-width: 620px; margin: 0 auto; padding: 48px 24px; width: 100%; }
+
+    .form-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      margin-bottom: 40px;
+    }
+
+    .form-card h2 { font-size: 22px; font-weight: bold; margin-bottom: 8px; color: #1a1a1a; }
+    .form-card p { font-size: 15px; color: #666; margin-bottom: 28px; line-height: 1.6; font-family: Arial, sans-serif; }
+    .form-group { margin-bottom: 16px; }
+
+    label {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: Arial, sans-serif;
+      color: #1a1a1a;
+      background: #fafafa;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    input[type="text"]:focus, input[type="email"]:focus {
+      border-color: #0f0f0f;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(15,15,15,0.06);
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 15px;
+      background: #0f0f0f;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.1s;
+      letter-spacing: 0.3px;
+    }
+
+    button[type="submit"]:hover { background: #2a2a2a; }
+    button[type="submit"]:active { transform: scale(0.99); }
+    button[type="submit"]:disabled { background: #999; cursor: not-allowed; }
+
+    .privacy { font-family: Arial, sans-serif; font-size: 12px; color: #aaa; text-align: center; margin-top: 14px; }
+
+    #success-msg { display: none; text-align: center; padding: 32px 0 8px; }
+    #success-msg .checkmark { font-size: 48px; margin-bottom: 16px; }
+    #success-msg h3 { font-size: 22px; margin-bottom: 10px; }
+    #success-msg p { font-size: 15px; color: #666; font-family: Arial, sans-serif; line-height: 1.6; }
+
+    #error-msg {
+      display: none;
+      background: #fff3f3;
+      border: 1px solid #f5c6c6;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #c0392b;
+      margin-top: 12px;
+    }
+
+    .perks { margin-bottom: 40px; }
+    .perks h3 { font-size: 13px; font-family: Arial, sans-serif; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #999; margin-bottom: 20px; }
+    .perk-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+    .perk-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .perk-text strong { display: block; font-size: 15px; font-weight: bold; margin-bottom: 2px; color: #1a1a1a; }
+    .perk-text span { font-size: 14px; color: #777; font-family: Arial, sans-serif; line-height: 1.5; }
+
+    footer { background: #0f0f0f; color: #666; text-align: center; padding: 24px; font-family: Arial, sans-serif; font-size: 13px; }
+    footer strong { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">Weekly Newsletter</div>
+    <h1>The <em>AI Instructor</em> Brief</h1>
+    <p>The most important AI launches, tools, and moves — curated every Monday morning for practitioners.</p>
+  </header>
+
+  <main>
+    <div class="form-card">
+      <h2>Get your Monday brief</h2>
+      <p>Join AI practitioners staying ahead of the curve. Free, every Monday at 7am SGT.</p>
+
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Sarah Tan" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <button type="submit" id="submit-btn">Subscribe — It's Free →</button>
+        <p class="privacy">No spam. No ads. Unsubscribe anytime.</p>
+        <div id="error-msg"></div>
+      </form>
+
+      <div id="success-msg">
+        <div class="checkmark">✅</div>
+        <h3>You're in!</h3>
+        <p>Check your inbox for a confirmation. Your first brief arrives this Monday at 7am SGT.</p>
+      </div>
+    </div>
+
+    <div class="perks">
+      <h3>What's inside every issue</h3>
+      <div class="perk-item">
+        <div class="perk-icon">📰</div>
+        <div class="perk-text">
+          <strong>Deep Dives</strong>
+          <span>3–5 major stories with real context — what happened, why it matters, and what it signals for AI.</span>
+        </div>
+      </div>
+      <div class="perk-item">
+        <div class="perk-icon">⚡</div>
+        <div class="perk-text">
+          <strong>Quick Hits</strong>
+          <span>15+ shorter stories across LLMs, agents, generative AI, vibe coding, and AI marketing tools.</span>
+        </div>
+      </div>
+      <div class="perk-item">
+        <div class="perk-icon">🆕</div>
+        <div class="perk-text">
+          <strong>New Tools Spotlight</strong>
+          <span>The freshest AI products and startups spotted this week — before they go mainstream.</span>
+        </div>
+      </div>
+      <div class="perk-item">
+        <div class="perk-icon">🎯</div>
+        <div class="perk-text">
+          <strong>Curated for practitioners</strong>
+          <span>Written by an AI instructor, for people who teach and practice generative and agentic AI.</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>The AI Instructor Brief</strong> &nbsp;·&nbsp; Sent every Monday 7am SGT</p>
+  </footer>
+
+  <script>
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyshQm5SnJUB6AUrORaiQhpyWANJdpYgm8xpqLP4p7iTJS0lFz2TPYxAVHca3Lg7MzTzA/exec';
+
+    document.getElementById('signup-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const btn = document.getElementById('submit-btn');
+      const errorMsg = document.getElementById('error-msg');
+
+      btn.textContent = 'Subscribing...';
+      btn.disabled = true;
+      errorMsg.style.display = 'none';
+
+      try {
+        const response = await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, timestamp: new Date().toISOString() })
+        });
+        document.getElementById('signup-form').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+      } catch (err) {
+        errorMsg.textContent = 'Something went wrong. Please try again.';
+        errorMsg.style.display = 'block';
+        btn.textContent = 'Subscribe — It\'s Free →';
+        btn.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
