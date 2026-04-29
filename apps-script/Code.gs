@@ -4,7 +4,7 @@
 // ============================================================
 
 const SHEET_NAME = 'Subscribers';
-const AGENTMAIL_API_KEY = 'am_us_inbox_439edda46170a14c0f79efcda8d00368656d412d4ccbb06f8ae382eeeb8a5c91';
+const AGENTMAIL_API_KEY = 'YOUR_AGENTMAIL_API_KEY_HERE'; // Keep this private — never commit to GitHub
 const AGENTMAIL_INBOX_ID = 'coachbrandonclaude%40agentmail.to'; // full email, URL-encoded
 
 // RUN THIS FIRST to test the welcome email
@@ -66,7 +66,7 @@ function sendWelcomeEmail(name, email) {
 <table cellpadding="0" cellspacing="0" style="margin:0 0 28px;width:100%;">
 <tr><td style="padding:10px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:20px;">📰</span>&nbsp;&nbsp;<span style="font-family:Arial,sans-serif;font-size:15px;color:#1a1a1a;"><strong>3–5 deep dives</strong> on the biggest AI stories</span></td></tr>
 <tr><td style="padding:10px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:20px;">⚡</span>&nbsp;&nbsp;<span style="font-family:Arial,sans-serif;font-size:15px;color:#1a1a1a;"><strong>15+ quick hits</strong> across LLMs, agents, generative AI &amp; more</span></td></tr>
-<tr><td style="padding:10px 0;"><span style="font-size:20px;">🆕</span>&nbsp;&nbsp;<span style="font-family:Arial,sans-serif;font-size:15px;color:#1a1a1a;"><strong>New tools spotlight</strong> — before they go mainstream</span></td></tr>
+<tr><td style="padding:10px 0;"><span style="font-size:20px;">🆕</span>&nbsp;&nbsp;<span style="font-family:Arial,sans-serif;font-size:15px;color:#1a1a1a;"><strong>New tools spotlight</strong> ��� before they go mainstream</span></td></tr>
 </table>
 <p style="margin:0 0 32px;font-size:16px;color:#333;line-height:1.8;font-family:Arial,sans-serif;">Your first issue lands this coming Monday. See you then.</p>
 <p style="margin:0;font-size:15px;color:#555;font-family:Arial,sans-serif;line-height:1.7;">— Brandon<br><span style="color:#999;font-size:13px;">AI Instructor &amp; Curator, The AI Instructor Brief</span></p>
